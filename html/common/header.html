@@ -1,0 +1,90 @@
+<header>
+    <!-- 네비게이션(nav) 컨트롤에 사용하는 드롭다운. -->
+    <div class="navbar header-navbar">
+        <nav class="navbar-default">
+            <div class="container-fluid">
+                <!-- 네비게이션(nav)의 기본 설정으로 모바일일 때, 메뉴 버튼이 나온다. -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img src="/images/code_icon.png" alt="penguin coder의 페이지" title="penguin coder의 페이지"
+                            onclick="fnMainIcon()">
+                    </a>
+                </div>
+                <!-- 메뉴 설정 -->
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                onclick="fnGameInfo()" aria-expanded="false">
+                                게임정보
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                onclick="fnChampion()" aria-expanded="false">
+                                챔피언
+                            </a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                aria-expanded="false">
+                                새소식<span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li class="sub-menu">
+                                    <a href="#" onclick="fnNewNews_1()">
+                                        소식1
+                                    </a>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" onclick="fnNewNews_2()">
+                                        소식2
+                                    </a>
+                            </ul>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                onclick="fnPatchNote()" aria-expanded="false">
+                                패치노트
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="nav navbar-nav navbar-right">
+                        <button class="btn btn-warning" id="goback_intro_btn" type="submit"><span
+                                class="glyphicon glyphicon-remove"></span> 로그아웃</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#goback_intro_btn").click(function (event) {
+            location.href = '/html/intro.html';
+        });
+    });
+
+    function fnMainIcon() {
+        location.href = '/html/index.html';
+    }
+
+    function fnGameInfo() {
+        location.href = '/html/menus/game_info.html';
+    }
+
+    function fnChampion() {
+        location.href = '/html/menus/champions.html';
+    }
+
+    function fnNewNews_1() {
+        location.href = '/html/menus/new_news/news1.html';
+    }
+
+    function fnNewNews_2() {
+        location.href = '/html/menus/new_news/news2.html';
+    }
+
+    function fnPatchNote() {
+        location.href = '/html/menus/patchnote.html';
+    }
+</script>

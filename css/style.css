@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+html,body {width:100%; height: 100%;}
+html {overflow:scroll;}
+body {*word-break:break-all;-ms-word-break:break-all; }
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,textarea,p,blockquote,th,td,input,select,textarea,button {margin:0; padding:0;}
+fieldset,img {border:0px none;  vertical-align:top;}
+dl,ul,ol,menu,li {list-style:none;}
+blockquote, q {quotes: none;}
+blockquote:before, blockquote:after,q:before, q:after {content:''; content:none;}
+button {border:0 none; background-color:transparent; cursor:pointer;}
+body { background:#fff;}
+body,th,td,input,select,textarea,button{font-size:13px; line-height:24px;  font-family:'NanumGothic', 'Verdana', 'Geneva', 'Open Sans', 'Oswald', sans-serif;} 
+
+a:link,a:active,a:visited{color:#333; text-decoration:none; border:0px;}
+a:hover,a:focus{color:#7d7d7d; text-decoration:none;}
+img:hover,img:focus{border:0px none;}
+
+table {border-collapse:collapse; border-spacing:0;}
+td {text-align: center; border: 1px solid #ccc;}
+th {text-align: center; }
+address,caption,cite,code,dfn,em,var {font-style:normal; font-weight:normal;}
+summary, caption, legend, hr {width:0; height:0; font-size: ; line-height: ; overflow: hidden; visibility: hidden; border: none; position:absolute; left:-1000em;}
+caption {position:static;}
+/* label hidden */
+.invisible{overflow:hidden; visibility:hidden; width:0; height:0; font-size:0; line-height:0; position:absolute;}
+label.invisible{*position:Absolute;}
+
+img.title { display: none; }
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */ color: #a0a0a0; opacity: 0.7; /* Firefox */}
+:-ms-input-placeholder { /* Internet Explorer 10-11 */  color: #a0a0a0;}
+::-ms-input-placeholder { /* Microsoft Edge */  color: #a0a0a0;}
+/* IE 10, 11의 네이티브 화살표 숨기기 */
+select::-ms-expand {display: none;}
+select {
+	-webkit-appearance: none; /* 네이티브 외형 감추기 */
+    -moz-appearance: none;
+    appearance: none;       /* Remove default arrow */
+	border: 1px solid #c0c0c0;	
+	border-radius: 0px; /* iOS 둥근모서리 제거 */	 
+	margin: 0 auto; 
+	padding: .1em .1em; 
+	background: url('../images/common/bottom_arrow.png') no-repeat;  /* 화살표 모양의 이미지 */ 
+	background-color:white; 
+	background-position: 95%;
+	width: 120px;
+}
+
+table caption{display: none;}
+table th{background-color: #dddddd; border: 1px solid #adadad;}
+							
+img{margin: 0 auto; padding: 0;}
+label{margin-right: 6px;}
+
+.left{text-align: left;}
+.center{text-align: center;}
+.right{text-align: right;}
+.default-input{width: 100px;}
+.border-none{border: none;}
+
+.modal{top: -moz-calc(25%);top: -webkit-calc(25%);top: calc(25%);}
+.modal-header{padding: 8px;border-bottom: 1px solid #aaa;}
+.modal-footer{padding: 8px;border-top: 1px solid #aaa;}
+
+.table thead{background-color: #dddddd; font-size: 12pt;} 
+.table thead tr{border-bottom: 3px solid #6eb92b;}
+.table thead tr th{border: 1px solid #adadad;}
+
+.form-control{height: 28px;}
+
+.a{color: #a4d1ff;}
+
+.navbar{padding-bottom: 0; margin-bottom: 0;}
+.navbar-brand img{width: 170px; margin: -8px 0 0 0; padding: 0;}
+.navbar-nav{padding-left: 60px; font-size: 12pt; line-height: 50px;}
+.header-navbar{background: #fff; border-bottom: 5px solid #6eb92b; padding-bottom: 5px; z-index: 10000;}
+
+.container {width: 1920px; height: 100%;}
+.contents{margin: 0 auto; padding-top: 10px;}
+.left-contents{padding-left: 0;}
+.right-contents{padding-right: 0;}
+.title > span:before{content: ' \25CF' }  
+.breadcrumb{border-radius: 0;}
+.search-form{background-color: #ddf8c9; border: 1px solid #aaa; padding: 6px;}
+.data-form{background-color: #dfdfd9; border: 1px solid #aaa; padding: 0px;}
+
+.lef-menu{border: 1px solid #aaa; background: #fff; border-right: 1px solid #aaa;}
+.lef-menu-title{color: white; background-color: #6eb92b; text-align: center;} 
+.lef-menu-title h3{padding: 8px 0 8px 0; font-weight: bolder; font-size: 18pt;}
+.lef-menu .nav-pills > li:not(:last-of-type){border-bottom: 1px solid #aaa;}
+.lef-menu .nav-pills > li.active > a, .lef-menu .nav-pills > li.active > a:focus, .lef-menu .nav-pills > li.active > a:hover {color: #fff; opacity:0.7;}
+.lef-menu .nav-pills > li > a {border-radius: 0; font-size: 12pt;}
+.lef-menu .nav-pills > li > a:before {content: ' \2574'}
+
+.pnl{background: #fff;}
+.pnl-title{color: white; background-color: #6eb92b; text-align: center;} 
+.pnl-title h3{padding: 8px 0 8px 0; font-weight: bolder; font-size: 14pt;}
+
+.grid{margin: 0 auto; padding: 0;}
+
+.content-footer{margin: 0; padding: 6px 0px 0px 0px; border-top: #333 solid;}
+
+/**  tabulator  **/
+.tabulator{border: 1px solid #aaa;}
+.tabulator .tabulator-tableholder .tabulator-placeholder .tabulator-placeholder-contents{color: #888888;}
+.tabulator-headers, .tabulator-headers .tabulator-col, .tabulator-headers .tabulator-col .tabulator-col-content, .tabulator-headers .tabulator-col .tabulator-col-content .tabulator-col-title-holder{background-color: #e6e6e6; }
+.tabulator .tabulator-header{border-bottom: 2px solid #aaa;}
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content .tabulator-col-title {white-space: normal;}
+.tabulator .tabulator-header .tabulator-col .tabulator-col-content{padding: 2px;}
+.tabulator-col-content{height: 28px;}
+.tabulator-col-title-holder{text-align: center;font-size: 11pt;}
+.tabulator-headers .tabulator-col:not(:first-child){border-left: 1px solid #aaa;}
+.tabulator-headers .tabulator-col:last-of-type{border-right: 1px solid #aaa;}
+.tabulator-footer .tabulator-footer-contents{height: 52px;}
+.tabulator-footer .tabulator-footer-contents .tabulator-page{margin-right: 4px;}
+.tabulator-row{min-height: 28px;}
+.tabulator-row .tabulator-row-resize-handle{display: none; height: 0;}
+.tabulator-row .tabulator-cell{height: 28px; padding: 2px;font-size: 10pt;}
+.tabulator-row .tabulator-cell:not(:first-child){border-left: 1px solid #aaa;}
+.tabulator-row .tabulator-cell:nth-last-of-type(1){border-right: 1px solid #aaa;}
+.tabulator .tabulator-col-resize-handle{display: none; width: 0; }
+.tabulator-row.tabulator-selected{background-color: #d1e0f5;}
+
+/** tabulator_bootstrap4 Theme **/
+
+.date_input{height: 32px;}
+
