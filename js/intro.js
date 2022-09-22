@@ -70,5 +70,3 @@ function getCookie(cookieName) {
     }
     return unescape(cookieValue);
 }
-
-// localStorage 활용하여 회원가입, 로그인 location 수정 필요

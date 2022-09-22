@@ -75,7 +75,7 @@
             </div>
         </div>
     </div>
-    <!-- Modal -->
+    <!-- Regist Modal -->
     <div class="modal fade" id="registModal" tabindex="-1" role="dialog" aria-labelledby="registModalLabel">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -85,7 +85,7 @@
                     <h4 class="modal-title" id="registModalLabel">회원가입</h4>
                 </div>
                 <div class="modal-body">
-                    <form id="regist-form" name="regist-form" method="post">
+                    <form id="regist-form" name="regist-form">
                         <div id="regist-div" class="form-row">
                             <div id="insert-id-form" class="form-group">
                                 <label for="insert_Id">Username</label>
@@ -100,12 +100,23 @@
                                 <div class="inline-form">
                                     <input class="form-control" id="insert_Email" type="text" required
                                         placeholder="Email" value=""><label for="select_domain"
-                                        class="at">@</label><input type="text" class="form-control" id="input-domain" placeholder="example.com">
+                                        class="at">@</label><input type="text" class="form-control" id="input-domain"
+                                        placeholder="example.com">
                                     <select class="form-control" id="select_domain">
-                                        <option value="">직접입력</option>
-                                        <option value="google">gmail.com</option>
-                                        <option value="naver">naver.com</option>
-                                        <option value="daum">daum.net</option>
+                                        <option value="1" selected>직접입력</option>
+                                        <option value="naver.com">naver.com</option>
+                                        <option value="hanmail.net">hanmail.net</option>
+                                        <option value="hotmail.com">hotmail.com</option>
+                                        <option value="nate.com">nate.com</option>
+                                        <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                        <option value="empas.com">empas.com</option>
+                                        <option value="dreamwiz.com">dreamwiz.com</option>
+                                        <option value="freechal.com">freechal.com</option>
+                                        <option value="lycos.co.kr">lycos.co.kr</option>
+                                        <option value="korea.com">korea.com</option>
+                                        <option value="gmail.com">gmail.com</option>
+                                        <option value="hanmir.com">hanmir.com</option>
+                                        <option value="paran.com">paran.com</option>
                                     </select>
                                 </div>
                             </div>
@@ -122,6 +133,7 @@
                                 <div class="row" style="padding: 1px;"></div>
                                 <input class="form-control" id="insert_Pw_confirm" type="password" required
                                     placeholder="비밀번호를 다시 입력하세요." value="">
+                                <span class="pwConfirmError">비밀번호가 틀립니다!</span>
                             </div>
                             <div id="regist_btn" class="form-group">
                                 <button class="btn btn-primary" id="try_regist_btn" onclick="fnTryRegist()"><span
@@ -130,6 +142,53 @@
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
+        </div>
+        <script>
+            $("#select_domain").change(function () {
+                $("#select_domain option:selected").each(function () {
+                    if ($(this).val() == '1') {
+                        $("#input-domain").val('');
+                        $("#input-domain").attr("disabled", false);
+                    } else {
+                        $("#input-domain").val($(this).text());
+                        $("#input-domain").attr("disabled", true);
+                    }
+                });
+            });
+
+            $(document).ready(function () {
+                $("form").submit(function (event) {
+                    // login
+                    const userId = $("#login_id").val();
+                    const userEmail = $("#insert_Email").val() + "@" + $("#input-domain").val();
+                    const userPw = $("#insert_Pw").val();
+                    function fnTryRegist() {
+                        if (localStorage.getItem(userId) == userPw) {
+                        } else {
+                            EventTarget("#loginFailModal");
+                        }
+                    }
+                });
+            });
+
+            // https://dreamjy.tistory.com/27
+            // https://gimongstudy.tistory.com/75
+            // https://pycoding.tistory.com/entry/%EC%9E%90%EB%B0%94%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EB%B9%84%EB%B0%80%EB%B2%88%ED%98%B8-%EC%9D%BC%EC%B9%98-%ED%99%95%EC%9D%B8
+        </script>
+    </div>
+    <!-- login fail Modal -->
+    <div class="modal fade" id="loginFailModal" tabindex="-1" role="dialog" aria-labelledby="registModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="registModalLabel" style="color: red;">로그인 실패</h4>
+                </div>
+                <div class="modal-body">
+                    <label>로그인에 실패하였습니다.<br>아이디 또는 패스워드를 확인해주세요.</label>
                 </div>
             </div>
         </div>

@@ -104,6 +104,13 @@ display: flex;
 
 #regist_btn {
     position: relative;
-    left: 45%;
+    left: 42%;
     top: 14%;
+}
+
+.pwConfirmError {
+    color: red;
+    font-weight: bold;
+    position: relative;
+    left: 2%;
 }
