@@ -1,3 +1,10 @@
+/**
+* 기본 stylesheet & tabulator
+* pre - 2022.09.09
+* modify - 2022.09.24
+* dev : 이규호, 최양원
+* copyright : 이규호, 최양원
+*/
 @charset "UTF-8";
 
 html,body {width:100%; height: 100%;}
@@ -20,7 +27,7 @@ table {border-collapse:collapse; border-spacing:0;}
 td {text-align: center; border: 1px solid #ccc;}
 th {text-align: center; }
 address,caption,cite,code,dfn,em,var {font-style:normal; font-weight:normal;}
-summary, caption, legend, hr {width:0; height:0; font-size: ; line-height: ; overflow: hidden; visibility: hidden; border: none; position:absolute; left:-1000em;}
+summary, caption, legend, hr {width:0; height:0; font-size: 0; line-height: 0; overflow: hidden; visibility: hidden; border: none; position:absolute; left:-1000em;}
 caption {position:static;}
 /* label hidden */
 .invisible{overflow:hidden; visibility:hidden; width:0; height:0; font-size:0; line-height:0; position:absolute;}

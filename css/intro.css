@@ -1,3 +1,10 @@
+/**
+* 로그인 화면
+* pre - 2022.09.09
+* modify - 2022.09.24
+* dev : 이규호, 최양원
+* copyright : 이규호, 최양원
+*/
 body {
     background-image: url('/images/background_intro.jpg');
     background-repeat: no-repeat;
@@ -81,7 +88,16 @@ body {
 }
 
 .inline-form {
-display: flex;
+    display: flex;
+}
+
+#checkId {
+    position: absolute;
+    left: 90%;
+    top: 14%;
+    transform: translate(-50%, -50%);
+    height: 22px;
+    padding: 0 12px 0 12px;
 }
 
 #insert_Email {
@@ -93,7 +109,8 @@ display: flex;
     font-size: 16px;
 }
 
-#input-domain, #select_domain {
+#input-domain,
+#select_domain {
     width: 160px;
     height: 34px;
 }

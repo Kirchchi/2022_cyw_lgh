@@ -1,3 +1,10 @@
+/**
+ * common
+ * pre - 2022.09.09
+ * modify - 2022.09.24
+ * dev : 이규호, 최양원
+ * copyright : 이규호, 최양원
+ */
 const NO_DATA_MSG = "검색된 데이터가 없습니다.";
 const LOCALE_LANG = {
     "ko": {

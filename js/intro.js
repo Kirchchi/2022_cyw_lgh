@@ -1,10 +1,33 @@
+/**
+ * 로그인 화면
+ * pre - 2022.09.09
+ * modify - 2022.09.24
+ * dev : 이규호, 최양원
+ * copyright : 이규호, 최양원
+ */
+
+let input_id = "";
+let input_pw = "";
+let login_pw = "";
+
+// 로그인
 $(document).ready(function () {
     $("#login_id, #login_pw").keyup(function (e) {
         if (e.keyCode == 13) {
-            var input_id = $("#login_id").val();
-            var input_pw = $("#login_pw").val();
+            input_id = $('#login_id').val();
+            input_pw = $('#login_pw').val();
 
-            if (input_id == 'admin' && input_pw == 'admin01') {
+            if (localStorage.getItem(input_id) == null) {
+                alert('아이디 또는 비밀번호를 확인 해주세요.');
+                $("#login_id").val("");
+                $("#login_pw").val("");
+            }
+
+            let getLoginData = JSON.parse(localStorage.getItem(input_id));
+            let pwIndex = Object.values(getLoginData);
+            login_pw = pwIndex[1];
+
+            if (login_pw == input_pw) {
                 location.href = '/html/index.html';
                 return;
             }
@@ -14,11 +37,21 @@ $(document).ready(function () {
         }
     });
 
-    $("#intro_login_btn").click(function (event) {
-        var input_id = $("#login_id").val();
-        var input_pw = $("#login_pw").val();
+    $("#intro_login_btn").click(function () {
+        input_id = $('#login_id').val();
+        input_pw = $('#login_pw').val();
 
-        if (input_id == 'admin' && input_pw == 'admin01') {
+        if (localStorage.getItem(input_id) == null) {
+            alert('아이디 또는 비밀번호를 확인 해주세요.');
+            $("#login_id").val("");
+            $("#login_pw").val("");
+        }
+
+        let getLoginData = JSON.parse(localStorage.getItem(input_id));
+        let pwIndex = Object.values(getLoginData);
+        login_pw = pwIndex[1];
+
+        if (login_pw == input_pw) {
             location.href = '/html/index.html';
             return;
         }
@@ -27,6 +60,7 @@ $(document).ready(function () {
         $("#login_pw").val("");
     });
 
+    // 아이디 저장
     var key = getCookie("key");
     $("#login_id").val(key);
 
