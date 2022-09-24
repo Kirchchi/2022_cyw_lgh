@@ -56,42 +56,100 @@ copyright : 이규호, 최양원
                         </li>
                     </ul>
                     <div class="nav navbar-nav navbar-right">
-                        <button class="btn btn-warning" id="goback_intro_btn" type="submit"><span
-                                class="glyphicon glyphicon-remove"></span> 로그아웃</button>
+                        <button class="btn btn-warning" id="goback_intro_btn" type="submit" onclick="fnTest()"><span
+                                class="glyphicon glyphicon-remove"></span> test</button>
+                        <button class="btn btn-info" id="user_info" type="submit" data-toggle="modal"
+                            data-target="#userInfoModal"><span class="glyphicon glyphicon-user"></span> 회원정보</button>
+                        <button class="btn btn-warning" id="goback_intro_btn" type="submit"
+                            onclick="fnGoBackIntro()"><span class="glyphicon glyphicon-remove"></span> 로그아웃</button>
                     </div>
                 </div>
             </div>
         </nav>
     </div>
+    <!-- userInfo Modal -->
+    <div class="modal fade" id="userInfoModal" tabindex="-1" role="dialog" aria-labelledby="registModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="registModalLabel"><span class="glyphicon glyphicon-user"></span> 회원정보
+                    </h4>
+                </div>
+                <div class="modal-body" id="body1"
+                    style="position:relative; display: flex; justify-content: space-around; visibility: none;">
+                    <button class="btn btn-info" id="search_info" type="submit" onclick="fnSearchInfo()"><span
+                            class="glyphicon glyphicon-search"> 계정정보</span></button>
+                    <button class="btn btn-warning" id="quit_userInfo" type="submit" onclick="fnQuitUserInfo()"><span
+                            class="glyphicon glyphicon-trash"> 회원탈퇴</span></button>
+                </div>
+                <div class="modal-body" id="body2"
+                    style="position:relative; display: none; justify-content: space-around;">
+                    <button class="btn btn-info" id="search_info" type="submit" onclick=""><span
+                            class="glyphicon glyphicon-search"> 계정정보</span></button>
+                    <button class="btn btn-warning" id="quit_userInfo" type="submit" onclick=""><span
+                            class="glyphicon glyphicon-trash"> 회원탈퇴</span></button>
+                </div>
+                <div class="modal-body" id="body3" style="position:relative; display: none;">
+                    <button class="btn btn-info" id="search_info" type="submit" onclick=""><span
+                            class="glyphicon glyphicon-search"> 1정보</span></button>
+                    <button class="btn btn-warning" id="quit_userInfo" type="submit" onclick=""><span
+                            class="glyphicon glyphicon-trash"> 2탈퇴</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
 <script type="text/javascript">
-    $(document).ready(function () {
-        $("#goback_intro_btn").click(function (event) {
-            location.href = '/html/intro.html';
-        });
+    function fnGoBackIntro() {
+    location.href = '/html/intro.html';
+}
+
+function fnMainIcon() {
+    location.href = '/html/index.html';
+}
+
+function fnGameInfo() {
+    location.href = '/html/menus/game_info.html';
+}
+
+function fnChampion() {
+    location.href = '/html/menus/champions.html';
+}
+
+function fnNewNews_1() {
+    location.href = '/html/menus/new_news/news1.html';
+}
+
+function fnNewNews_2() {
+    location.href = '/html/menus/new_news/news2.html';
+}
+
+function fnPatchNote() {
+    location.href = '/html/menus/patchnote.html';
+}
+
+function fnSearchInfo() {
+    $('#body1').hide();
+    $('#body2').show();
+}
+
+function fnQuitUserInfo() {
+    $('#body1').hide();
+    $('#body3').show();
+}
+
+$(document).ready(function () {
+    $('#userInfoModal').on('hidden.bs.modal', function () {
+        $('#body1').show();
+        $('#body2').hide();
+        $('#body3').hide();
     });
+});
 
-    function fnMainIcon() {
-        location.href = '/html/index.html';
-    }
-
-    function fnGameInfo() {
-        location.href = '/html/menus/game_info.html';
-    }
-
-    function fnChampion() {
-        location.href = '/html/menus/champions.html';
-    }
-
-    function fnNewNews_1() {
-        location.href = '/html/menus/new_news/news1.html';
-    }
-
-    function fnNewNews_2() {
-        location.href = '/html/menus/new_news/news2.html';
-    }
-
-    function fnPatchNote() {
-        location.href = '/html/menus/patchnote.html';
-    }
+function fnTest() {
+    console.log(input_id);
+    alert(input_id);
+}
 </script>

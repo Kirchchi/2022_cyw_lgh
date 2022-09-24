@@ -34,6 +34,7 @@ $(document).ready(function () {
             alert('아이디 또는 비밀번호를 확인 해주세요.');
             $("#login_id").val("");
             $("#login_pw").val("");
+            login_pw = "";
         }
     });
 
